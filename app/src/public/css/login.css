@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.header_logo {
+    text-align: center;
+}
+.header_logo > a > img{
+    width: 100px;
+    height: auto;
+}
+.login_menu{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50vh
+}
+
+.side_menu{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    height: 50vh;
+}
+
+.side_menu >div{
+    color: white;
+    background-color: rgb(85, 180, 250);
+    font-size: 20px;
+    width: 200px;   
+    height: 50px;
+    border: 1px solid rgb(85, 180, 250);
+    border-radius: 30px;
+    line-height: 50px;
+    margin: 15px
+}
+
+.input_area{
+    width: 400px;
+    position: relative;
+}
+.input_area > input {
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border: 2px solid rgb(85, 180, 250);
+    font-size: 18px; 
+    margin: 5px 0   ;
+}
+.input_area > label{
+    color: rgb(184, 180, 180);
+    position:absolute;
+    left: 10px;
+    top: 20px;
+    font-size: 18px;
+    transition: all .5s ease;
+}
+.input_area >input:focus + label,
+.input_area >input:valid + label{
+    top: 5px;
+    font-size: 13px;
+    color: rgb(85, 180, 250);
+}
+
+.btn_area{
+    width: 400px;
+}
+.btn_area > button{
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(85, 180, 250);
+    border: none;
+    color: white;
+}
