@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Black+Han+Sans&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    여기는 루트입니다.
+    <div class="page1">
+        <div class="header">
+            <a class="menu"><span class="menu_img"><img src="https://ifh.cc/g/UWEbtl.png"></span></a>
+            <a href="/" class="logo"><img src="https://ifh.cc/g/GQPn2g.png"></a>
+            <a href="/login" class="login">로그인</a>
+        </div>
+        <div class="banner">
+            <img src="https://ifh.cc/g/a9K0ow.png">
+        </div>
+    </div>
+    <div class="page2">
+        <div class="theme1">카테고리</div>
+        <ul class="category1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+            <ul class="category2">
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <div class="page3">
+        <div class="ary">
+            <div class="theme2">랭킹</div>
+            <a class="allrank">전체랭킹></a>
+        </div>
+        <table>
+            <colgroup>
+                <col style="width: 12.5%;">
+                <col style="width: 50%;">
+                <col style="width: 12.5%;">
+                <col style="width: 12.5%;">
+                <col style="width: 12.5%;">
+            </colgroup>
+            <thead class="rank_bar"> 
+                <tr>
+                    <th>순위</th>
+                    <th>프로필</th>
+                    <th>누적포인트</th>
+                    <th>맞힌 퀴즈 수</th>
+                    <th>낸 퀴즈 수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for(i = 1 ; i <= 10 ; i++){
+                        document.write('<tr><td class="Nom">'+i+'</td></tr>'); 
+                    }
+                </script>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="footer">개인정보 처리방침 외 다수</div>
 </body>
 </html>

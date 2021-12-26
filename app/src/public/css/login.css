@@ -71,7 +71,9 @@
 .btn_area{
     width: 400px;
 }
-.btn_area > button{
+.btn_area > #button{
+    line-height: 50px;
+    text-align: center;
     cursor: pointer;
     width: 100%;
     height: 50px;
