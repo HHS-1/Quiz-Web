@@ -25,17 +25,30 @@
     width: auto;
     height: 100px;
     position: relative;
+    display: flex;
+    font-size: 15px;
 }
 
-.input_area > input{
+.input_area2{
+    margin: 0 0 5px 0;
+    width: auto;
+    height: 50px;
+    position: relative;
+    display: flex;
+    font-size: 15px;
+}
+
+.input_area > input, .input_area2 > input{
     padding: 10px;
     line-height: 100px;
     width: 500px;
     height: 50px;
+    font-size: 17px;
+    
 }
-.input_area > label{
+.input_area > label, .input_area2 > label{
     position: absolute;
-    left: 10px;
+    left: 0 px;
     top: -30px;
 }
 
@@ -60,4 +73,27 @@
     font-size: 15px;
     width: 100%;
     text-align: center;
+}
+
+#sms_certify, #email_certify{
+    width: 380px;
+    padding: 10px;
+}
+#button, #button2{
+    background-color: rgb(85, 180, 250, 0.8);
+    color: white;
+    width: 110px;
+    height: 50px;
+    margin: 0 10px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    /* border: none; */
+}
+.footer{
+    height: 100px;
+    width: auto;
+    text-align: center;
+    line-height: 100px;
 }

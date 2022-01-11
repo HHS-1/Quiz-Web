@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/register.css">
-    <script src="/js/home/register.js" defer></script>
+    <script type="module" src="/js/home/register.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,7 @@
                 <input type="password" id="psword" name="psword" autocomplete="off" required>
                 <label for="psword">비밀번호</label>
             </div>
+
             <div class="input_area">
                 <input type="password" id="psword_confirm" name="psword_confirm" autocomplete="off" required>
                 <label for="psword_confirm">비밀번호 확인</label>
@@ -31,16 +32,16 @@
                 <label for="name">이름</label>
             </div>
 
-
             <div class="input_area2">
-                <input type="text" id="sms_certify" name="sms_certify" autocomplete="off" required placeholder="휴대폰 번호를 입력하세요." >
-                <label for="sms_certify">휴대폰 인증</label>
-                <p id="button">인증번호 전송</p>
+                <input type="text" id="email_certify" name="email_certify" autocomplete="off" required placeholder="이메일을 입력하세요.">
+                <label for="email_certify">이메일 인증</label>
+                <p id="button2">인증번호 전송</p>
             </div>
 
             <div class="input_area">
                 <input type="text" id="authnom" name="authnom" autocomplete="off" required placeholder="인증번호를 입력하세요.">
             </div>
+
             <p id="rgs_btn">가입하기</p>
             <p class="msg">이미 회원가입을 했나요? <a href="/login">로그인</a></p>
         </form>
