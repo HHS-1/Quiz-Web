@@ -6,38 +6,49 @@ const id = document.querySelector("#id"),
     pswordConfirm = document.querySelector("#psword_confirm"),
     registerBtn = document.querySelector("#rgs_btn"),
     mail = document.querySelector("#email_certify"),
-    mailBtn = document.querySelector("#button2");
+    mailBtn = document.querySelector("#button2"),
+    authNumber = document.querySelector("#authnum"),
+    timeout = document.querySelector(".timeout"),
+    timeout2 = document.querySelector(".timeout2");
 
-registerBtn.addEventListener("click", register);
-mailBtn.addEventListener("click", Email);
+    registerBtn.addEventListener("click", register);
+    mailBtn.addEventListener("click", Email);
 
- 
 
 
 function Email() {
 
     const req = {
-        USEREMAIL : mail.value
+        USEREMAIL : mail.value,
+        authNumber : authNumber.value
     };
-
-
+    
         fetch("/register2", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // "Access-Control-Allow-Origin": "*"
+                "Access-Control-Allow-Origin": "*"
             },
             body: JSON.stringify(req),
-        }).then((res) => res.json())
-          .then((res) =>{
+        })
+        .then((res) => res.json())
+        .then((res) =>{
             if(res.success){
-                alert("이메일을 전송하였습니다");
+                timeout.style.position = "relative";
+                timeout.style.color = "rgb(9,187,246)";
+                timeout2.style.position = "relative";
+                timeout2.style.color = "rgb(9,187,246)";
             }else {
                 alert("이메일 형식이 잘못되었습니다.");
             }
-        }).catch(err => {
+        })
+        
+        .catch(err => {
             console.log(err);
         })
+        
+    
+        
 }
 
 
@@ -52,8 +63,10 @@ function register() {
         id : id.value,
         name : name.value,
         psword : psword.value,
+        authNumber : authNumber.value,
+        USEREMAIL : mail.value,
     };
-    console.log(req);
+    
     
     fetch("/register", {
         method: "POST",
@@ -75,5 +88,9 @@ function register() {
 
     
 }
+
+
+
+
 
 

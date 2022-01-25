@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/register.css">
     <script type="module" src="/js/home/register.js" defer></script>
+    <!-- <script src="/js/home/email.js" defer></script> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +39,15 @@
                 <p id="button2">인증번호 전송</p>
             </div>
 
-            <div class="input_area">
-                <input type="text" id="authnom" name="authnom" autocomplete="off" required placeholder="인증번호를 입력하세요.">
+            <div class="timeout">
+                <p>인증번호가 전송되었습니다. (제한시간 3분)<br>인증번호가 도착하지 않는다면 올바른 이메일인지 확인해주세요.</p>
+            </div>
+
+            <div class="input_area2">
+                <input type="text" id="authnum" name="authnum" autocomplete="off" required placeholder="인증번호를 입력하세요.">
+            </div>
+            <div class="timeout2">
+                <p>인증번호를 입력하셨다면 가입하기를 눌러주세요.</p>
             </div>
 
             <p id="rgs_btn">가입하기</p>

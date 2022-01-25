@@ -2,7 +2,7 @@
 
 const UserStorage = require("../../models/UserStorage");
 const User = require("../../models/User");
-const Email = require("../../models/email");
+
 
 const output = {
     hello: (req, res)=>{
@@ -39,14 +39,14 @@ const process = {
     },
 
     register: async (req, res)=>{
-        const user = new User(req.body);
+        const user = new User(req.body);   
         const response = await user.register();
         return res.json(response);
     },
 
     email: async (req, res)=>{
-        const email = new Email(req.body);
-        const response = await email.sendEmail();
+        const user = new User(req.body);
+        const response = await user.sendEmail();
         console.log(response);
         return res.json(response);
     }
