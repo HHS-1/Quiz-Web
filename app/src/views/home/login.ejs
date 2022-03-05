@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Black+Han+Sans&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/login.css">
     <script src="/js/home/login.js" defer></script>
     <meta charset="UTF-8">
@@ -12,7 +13,7 @@
     
         <div class="login_menu">
         <form>
-        <div class="header_logo"><a href="/" ><img src="https://ifh.cc/g/GQPn2g.png"></a></div>
+        <a href="/"><div class="header_logo"></div></a>
             <div class="input_area">
                 <input type="text" id="id" name="id" autocomplete="off" required>
                 <label for="id">ID</label>
@@ -24,14 +25,16 @@
             <div class="btn_area">
                 <p id="button">LOGIN</p>
             </div>
-            
+            <div class="sidemenu">
+            <a class="join" href="/register0">회원가입</a>
+            <span class="l">|</span>
+            <a class="find_id" href="findid">ID 찾기</a>
+            <span class="l">|</span>
+            <a class="find_pw" href="findpw">PW 찾기</a>
+            </div>
         </form>
         </div>
-        
-        <div class="side_menu">
-            <a class="join" href="/register0">회원가입</a>
-            <a class="find_id">아이디 찾기</a>
-            <a class="find_pw">비밀번호 찾기</a>
+    
     
 
 </body>

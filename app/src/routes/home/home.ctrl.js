@@ -1,16 +1,35 @@
 "use strict";
 
-const UserStorage = require("../../models/UserStorage");
+
 const User = require("../../models/User");
 
 
 const output = {
     hello: (req, res)=>{
-        res.render("home/index");
+        if(req.session.logined){
+            req.session.save(function(){
+                res.render("home/index",{
+                    owner : true,
+                    ID : req.session.ID,
+                });
+            })
+        }else{
+            res.render("home/index",{
+                owner : false,
+            });
+        }
+        
     },
 
     login: (req, res)=>{
         res.render("home/login");
+    },
+
+    logout: (req, res)=>{
+        req.session.destroy(function(err){
+            if(err) console.log(err);
+            res.redirect('/');
+        })
     },
 
     register0: (req, res)=>{
@@ -27,6 +46,40 @@ const output = {
     // phone: (req, res) =>{
     //     res.render("home/phone")
     // }
+    board: async (req, res)=>{
+        // const user = new User;
+        // const info = await user.getting();
+        // console.log(info.length);
+        if(req.session.logined){
+            req.session.save(function(){
+                res.render("home/board",{
+                    owner : true,
+                    ID : req.session.ID,
+                    // quiz : info,
+                });
+            })
+        }else{
+            res.render("home/board",{
+                owner : false,
+                // quiz : info,
+            });
+        }
+    },
+    writing: (req, res)=>{
+        
+        if(req.session.logined){
+            req.session.save(function(){
+                res.render("home/writing",{
+                    owner : true,
+                    ID : req.session.ID,
+                }
+            )})
+        }else{
+            res.render("home/writing",{
+                owner : false,
+            });
+        }
+    },
 };
 
 
@@ -35,6 +88,10 @@ const process = {
     login: async (req, res)=>{
         const user = new User(req.body);
         const response = await user.login();
+        if(response.success){
+            req.session.logined = true;
+            req.session.ID = req.body.id;
+        }
         return res.json(response);
     },
 
@@ -48,6 +105,20 @@ const process = {
         const user = new User(req.body);
         const response = await user.sendEmail();
         console.log(response);
+        return res.json(response);
+    },
+
+    board: async(req, res)=>{
+        const user = new User;
+        const info = await user.getting();
+        // console.log(info.get[0]);
+        return res.send(info.get);
+    },
+
+    writing: async (req, res)=>{
+        req.body.user = req.session.ID;
+        const quiz = new User(req.body);
+        const response = await quiz.writing();
         return res.json(response);
     }
 };

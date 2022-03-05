@@ -9,7 +9,7 @@ const number = require("../../rand");
 class User {
   constructor(body) {
     this.body = body;
-    this.authNumber = rand;
+    this.authNumber = rand.authNo(6);
   }
   
 
@@ -35,18 +35,20 @@ class User {
 
   async register() {
     const client = this.body;
+    console.log(client);
     const USEREMAIL = client.USEREMAIL
     try {
-    const getauth = await UserStorage.getauth(USEREMAIL)
-    if(getauth){
-      console.log(client.authNumber);
-      console.log(getauth);
-      if(client.authNumber !== getauth){
-        return {success : false, msg:"인증번호가 일치하지 않습니다"};
+      const getauth = await UserStorage.getauth(USEREMAIL)
+      if(getauth){
+        console.log(client.authNumber);
+        console.log(getauth);
+        if(client.authNumber !== getauth){
+          return { success : false , msg : "인증번호가 일치하지 않습니다."};
+        }else{
+          const response = await UserStorage.save(client);
+          return response;
+        }
       }
-    }
-      const response = await UserStorage.save(client);
-      return response;
     } catch (err) {
       return { success: false, msg : "사용할 수 없는 아이디입니다." };
     }
@@ -68,7 +70,14 @@ class User {
         }
 
         const save = await UserStorage.emailauth(Emailauth);
+        const dlt = setTimeout(()=>{
+          UserStorage.emaildelete(USEREMAIL);
+        },180000); 
+        
+        
+        
         if(save){
+          dlt;
           const email = {
             host: "smtp.naver.com",
             port: 465,
@@ -97,12 +106,31 @@ class User {
                 }
             });
         })
-        }
+      }
 
     }catch(error){
         console.log(error);
     }
-    
+  }
+
+  async writing(){
+    try{
+      const client = this.body;
+      console.log(client);
+      const save = await UserStorage.savequiz(client);
+      return save;
+    }catch(err){
+      return {success : false, msg: "error"};
+    }
+  }
+  async getting(){
+    try{
+      const get = await UserStorage.getquiz();
+      // console.log(get);
+      return {get};
+    }catch(err){
+      return {success : false, msg: "error"};
+    }
   }
 }
 

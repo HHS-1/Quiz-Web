@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+a{
+    color: black;
+}
+body{
+    min-width: 1250px;
+    /* overflow-x: hidden;
+    overflow-y: auto; */
+    /* background-color: rgb(9,187,246,0.1); */
+}
+
+.menu{
+    width: 400px;
+}
+.menu > .menu_img{
+    margin: 20px 0 0 20px;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url("./image/menu.png");
+    background-size: 25px 20px;
+ }
+ 
+
+#sidebar{
+    width: 300px;
+    height: 60px;
+    /* background-color: black; */
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    border: 1px solid black;
+}
+
+#xicon{
+    margin: 20px 0 0 20px;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url("./image/sidemenu.png");
+    background-size: 25px 20px;
+ }
+
+.logo{
+    width: 100px;
+    height: 30px;
+    margin: 15px 0;
+    background-image: url("./image/logo.png");
+    background-size: 100px 30px;
+}
+
+.login  {
+    text-align: end;
+    font-weight: bold;
+    /* background-color: rgb(9,187,246);
+    border: 1px solid rgb(85, 180, 250, 0.8); */
+    color: black;
+    text-align: center;
+    margin: 18px 0;
+    font-size: 15px;
+    width: 70px;
+    height: 20px;
+    margin-right: 50px;
+    border-radius: 10px;
+}
+.userID{
+    line-height: 60px;
+    cursor: pointer;
+    padding-right: 5px;
+}
+.login:hover , .userID:hover{
+    color: rgb(9,187,246);
+}
+.usermenu2{
+    visibility: hidden;
+    
+}
+.usermenu{
+    width: 250px;
+    height: 150px;
+    border: 1px solid black;
+    position: absolute;
+    display: flex;
+    top: 60px;
+    right: 60px;
+    text-align: start;
+    align-items: flex-start;
+    padding: 5px;
+}
+.usermenu > li {
+    margin: 0;
+}
+.userimg{
+    width: 110px;
+    height: 90px;
+    border: 1px solid rgb(9,187,246);
+    border-radius: 50%
+}
+.smallrank > li{
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.header{
+    background-color: white;
+    position: fixed;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    display: flex;
+    width: 100vw;
+    min-width: 1250px;
+    height: 60px;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.bd{
+    display: flex;
+    width: 1250px;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+/* .banner{
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    width: 100vw;
+    height: 150px;
+    min-width: 1250px;
+    position: absolute;
+    top: 60px;
+    z-index: -1;
+    background-image: url("./image/수학배너3.png");
+} */
+.mq{
+    position: absolute;
+    font-size: 30px;
+    color: rgb(9,187,246);
+    top: -50px;
+    left: 0px;
+    font-weight: bold;
+}
+/* .banner > img{
+    width: 100vw;
+    height: 150px;
+} */
+.sidemenu{
+    position: relative;
+    width: 250px;
+    margin: 0 10px;
+    margin-top: 140px;
+    /* position: fixed; */
+    padding: 0 auto;
+    /* margin: 0 100px 0 0; */
+    /* background-color: rgb(9,187,246,0.1); */
+    background-color: white;
+    box-shadow: 0 0 4px;
+}
+.mathqna{
+    width: 150px;
+    height: 100px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 15px;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* border: 5px solid rgb(9,187,246,0.5); */
+}
+.mathqna:hover{
+    background-color: rgb(9,187,246,0.1);
+}
+.mathqna > a {
+    color: rgb(9,187,246);
+}
+.mathrank{
+    /* border: 2px solid rgb(9,187,246); */
+    width: 150px;
+    margin: 0 auto;
+}
+.mathrank > li{
+
+}
+
+.mainmenu{
+    /* margin: 0 auto; */
+    margin: 0 10px;
+    margin-top: 140px;
+    /* padding: 0 10px; */
+    background-color: white;
+    box-shadow: 0 0 4px;
+}
+.mainmenu-header{
+    /* margin: 0 auto; */
+    line-height: 100px;
+    display: flex;
+    /* border-bottom: 3px solid rgb(9,187,246); */
+    width: 800px;
+    min-width: 800px;
+    height: 100px;
+    align-items: flex-end;
+    padding: 0 10px;
+    /* justify-content: space-between; */
+}
+.mainmenu-header > ol {
+    display: flex;
+    position: relative;
+    height: 40px;
+    /* margin: auto; */
+}
+.mainmenu-header > ol > li{
+    font-size: 15px;
+    margin: 10px;
+    line-height: 18px;
+}
+.searchbar{
+    height: 30px;
+    width: 200px;
+    margin: 0 10px 5px auto;
+}
+.makebtn{
+    height: 30px;
+    line-height: 20px;
+}
+.mainmenu-body{
+    width: 800px;
+    /* border: 3px solid rgb(9,187,246); */
+    /* margin: 0 auto; */
+}
+td{
+    text-align: center;
+}
+tr{
+    height: 50px;
+    box-shadow: 0 0 1px;
+}
+.pagination{
+    display: flex;
+    width: 800px;
+    height: 30px;
+}
+.pagination > button{
+    margin: auto;
+}

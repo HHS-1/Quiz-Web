@@ -17,5 +17,5 @@ randomNum.authNo = function (n) {
 
 const number = randomNum;
 
-module.exports =  number.authNo(6);
+module.exports =  number;
 
