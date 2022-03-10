@@ -13,6 +13,8 @@ router.get("/register", ctrl.output.register);
 router.get("/register2", ctrl.output.register2);
 router.get("/board", ctrl.output.board);
 router.get("/writing", ctrl.output.writing);
+router.get("/findingid",ctrl.output.findingid);
+router.get("/findingpw",ctrl.output.findingpw);
 // router.get("/p", ctrl.output.phone);
 
 router.post("/login", ctrl.process.login);

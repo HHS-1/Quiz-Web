@@ -97,14 +97,28 @@
                         </tr>
                     </thead>
                     <tbody id="list">
+                        <%for(let i = length-perpage*(page-1) ; i >length-perpage*page ; i--){%>
+                            <%if(i===-1){%>
+                                <%break%>    
+                            <%}%>
+                                <tr>
+                                <td><%=quiz[i].number%></td>
+                                <td><%=quiz[i].title%></td>
+                                <td><%=quiz[i].user%></td>
+                                <td style="font-size : 13px;"><%=quiz[i].in_date%></td>
+                                </tr>
+                          <%}%>
                     </tbody>
                 </table>
-                <div class="pagination">
-                    <button onclick="previous()">＜prev</button>
-                    <button id="next" onclick="next()">next＞</button>
-                </div>
+                
+                
             </div>
         </div>
+        <div class="pagebar">
+            <% for(let j = 1 ; j<=totalpage ; j++) {%>
+                    <div id="pagination" onclick="move('<%=j%>')"><%=j%> </div>
+            <%}%> 
+            </div>
     </div>
     
     

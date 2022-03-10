@@ -121,11 +121,13 @@ body{
 }
 
 .bd{
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     width: 1250px;
     margin: 0 auto;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 300px;
 }
 /* .banner{
     color: black;
@@ -152,7 +154,7 @@ body{
     height: 150px;
 } */
 .sidemenu{
-    position: relative;
+    /* position: relative; */
     width: 250px;
     margin: 0 10px;
     margin-top: 140px;
@@ -187,6 +189,7 @@ body{
 
 
 .mainmenu{
+    /* position: relative; */
     /* margin: 0 auto; */
     margin: 0 10px;
     margin-top: 140px;
@@ -208,7 +211,7 @@ body{
 }
 .mainmenu-header > ol {
     display: flex;
-    position: relative;
+    /* position: relative; */
     height: 40px;
     /* margin: auto; */
 }
@@ -238,11 +241,20 @@ tr{
     height: 50px;
     box-shadow: 0 0 1px;
 }
-.pagination{
-    display: flex;
-    width: 800px;
-    height: 30px;
+
+#pagination{
+    text-align: center;
+    cursor: pointer;
+    margin: 20px;
 }
-.pagination > button{
-    margin: auto;
+#pagination:hover{
+    color: rgb(9,187,246);
+}
+.pagebar{
+    display: flex; 
+    justify-content: center; 
+    width: 800px;
+    position: absolute;
+    bottom: -60px;
+    left: 360px;
 }

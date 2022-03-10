@@ -127,7 +127,7 @@ class User {
     try{
       const get = await UserStorage.getquiz();
       // console.log(get);
-      return {get};
+      return get;
     }catch(err){
       return {success : false, msg: "error"};
     }

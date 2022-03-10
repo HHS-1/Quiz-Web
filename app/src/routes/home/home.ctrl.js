@@ -6,6 +6,7 @@ const User = require("../../models/User");
 
 const output = {
     hello: (req, res)=>{
+        req.session.page = 1;
         if(req.session.logined){
             req.session.save(function(){
                 res.render("home/index",{
@@ -47,15 +48,23 @@ const output = {
     //     res.render("home/phone")
     // }
     board: async (req, res)=>{
-        // const user = new User;
-        // const info = await user.getting();
+        const user = new User;
+        const info = await user.getting();
         // console.log(info.length);
         if(req.session.logined){
+            let page = req.session.page,
+                totaldata = info.length,
+                totalpage = Math.ceil(totaldata/10);
+            // console.log(page);
             req.session.save(function(){
                 res.render("home/board",{
                     owner : true,
                     ID : req.session.ID,
-                    // quiz : info,
+                    quiz : info,
+                    page : page,
+                    perpage : 10,
+                    length : info.length-1,
+                    totalpage : totalpage,
                 });
             })
         }else{
@@ -66,7 +75,6 @@ const output = {
         }
     },
     writing: (req, res)=>{
-        
         if(req.session.logined){
             req.session.save(function(){
                 res.render("home/writing",{
@@ -80,6 +88,13 @@ const output = {
             });
         }
     },
+    findingid: (req, res)=>{
+        res.render("home/findingid");
+    },
+    
+    findingpw: (req, res)=>{
+        res.render("home/findingpw");
+    }
 };
 
 
@@ -109,10 +124,9 @@ const process = {
     },
 
     board: async(req, res)=>{
-        const user = new User;
-        const info = await user.getting();
-        // console.log(info.get[0]);
-        return res.send(info.get);
+        req.session.page = req.body.page;
+        const response = {success : true};
+        return res.json(response);
     },
 
     writing: async (req, res)=>{
