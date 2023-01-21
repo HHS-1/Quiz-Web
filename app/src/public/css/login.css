@@ -49,6 +49,7 @@ body{
 }
 .find_pw , .find_id{
     padding-left: 10px;
+    cursor: pointer;
 }
 
 

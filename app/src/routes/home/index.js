@@ -15,6 +15,7 @@ router.get("/board", ctrl.output.board);
 router.get("/writing", ctrl.output.writing);
 router.get("/findingid",ctrl.output.findingid);
 router.get("/findingpw",ctrl.output.findingpw);
+router.get("/findingid2", ctrl.output.findingid2);
 // router.get("/p", ctrl.output.phone);
 
 router.post("/login", ctrl.process.login);
@@ -22,6 +23,8 @@ router.post("/register", ctrl.process.register);
 router.post("/register2", ctrl.process.email);
 router.post("/board", ctrl.process.board);
 router.post("/writing",ctrl.process.writing);
+router.post("/finding", ctrl.process.finding);
+router.post("/findingid", ctrl.process.findingID);
 
 
 module.exports = router;

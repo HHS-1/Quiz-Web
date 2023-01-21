@@ -22,7 +22,7 @@ function Email() {
 
     const req = {
         USEREMAIL : mail.value,
-        authNumber : authNumber.value
+        // authNumber : authNumber.value
     };
     const startMinutes = 3;
     let time = startMinutes * 60;
@@ -54,7 +54,7 @@ function Email() {
                     }
                 }
             }else {
-                alert("이메일 형식이 잘못되었습니다.");
+                alert("이메일 형식이 잘못되었습니다!");
             }
         })
         

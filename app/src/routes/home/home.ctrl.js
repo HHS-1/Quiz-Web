@@ -55,7 +55,7 @@ const output = {
             let page = req.session.page,
                 totaldata = info.length,
                 totalpage = Math.ceil(totaldata/10);
-            // console.log(page);
+            // console.log(info);
             req.session.save(function(){
                 res.render("home/board",{
                     owner : true,
@@ -89,11 +89,17 @@ const output = {
         }
     },
     findingid: (req, res)=>{
-        res.render("home/findingid");
+        res.render("home/findingid",{
+            ID : req.idPackage,
+        });
     },
     
     findingpw: (req, res)=>{
         res.render("home/findingpw");
+    },
+
+    findingid2: (req, res)=>{
+        res.render("home/findingid2");
     }
 };
 
@@ -111,7 +117,8 @@ const process = {
     },
 
     register: async (req, res)=>{
-        const user = new User(req.body);   
+        // console.log(req.body);
+        const user = new User(req.body);
         const response = await user.register();
         return res.json(response);
     },
@@ -133,6 +140,26 @@ const process = {
         req.body.user = req.session.ID;
         const quiz = new User(req.body);
         const response = await quiz.writing();
+        return res.json(response);
+    },
+
+    finding: async (req, res)=>{
+        const user = new User(req.body);
+        const response = await user.sendEmail();
+        console.log(response);
+        
+        return res.json(response);
+    },
+
+    findingID: async (req, res)=>{
+        const user = new User(req.body);
+        const response = await user.register();
+        console.log(response);
+        if(response.success){
+            const response2 = await user.finidingId();
+            response.id = response2;
+            req.idPackage = response.id;
+        }
         return res.json(response);
     }
 };

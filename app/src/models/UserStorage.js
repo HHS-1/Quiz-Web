@@ -30,7 +30,7 @@ class UserStorage{
     static async emailauth(emailauth){
         return new Promise((resolve, reject) => {
             const query = "INSERT INTO Emailauth(email, auth) VALUES(?,?);";
-            db.query(query, [emailauth.eamil] , (err,data) => {
+            db.query(query, [emailauth.email] , (err,data) => {
                 db.query(query, [emailauth.email , emailauth.auth], (err, data) => {
                     if(err) reject(err);
                     else resolve({success : true});
@@ -80,7 +80,16 @@ class UserStorage{
             })
         })
     }
-
+    
+    static async getId(email){
+        return new Promise((resolve, reject) => {
+            const query = "SELECT * FROM users WHERE email =?";
+            db.query(query, [email], (err, data)=>{
+                if(err) reject(err);
+                else resolve(data);
+            })
+        })
+    }
 }
 
 module.exports = UserStorage;

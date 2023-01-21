@@ -3,10 +3,12 @@
 const title = document.querySelector("#title"),
     body = document.querySelector("#summernote"),
     tag = document.querySelector("#tag"),
-    submit = document.querySelector("#submit");
+    submit = document.querySelector("#submit"),
+    cancel = document.querySelector("#cancel");
 
 
     submit.addEventListener("click",write);
+    cancel.addEventListener("click", back);
 
     function write(){
         const req = {
@@ -33,3 +35,7 @@ const title = document.querySelector("#title"),
         });
     }
     
+
+    function back(){
+        location.href = "/board";
+    }
