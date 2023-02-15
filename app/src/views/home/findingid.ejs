@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/finding.css">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="js/home/finding.js" defer></script>
+    
+</head>
+<body>
+    
+    <div class="header">
+        <div class="menu"><div class="menu_img"></div>
+            <div id="sidebar">
+            <div id="xicon"></div>
+            <h1>메뉴창 미완성</h1>
+            </div>
+        </div>
+        <a href="/" class="logo"></a>
+        <div style="line-height: 60px; width: 400px; text-align: end;">
+            <a href="/login" class="login">로그인</a>
+        </div>
+    </div>
+
+   
+    <div class="findingmenu">
+        <a href="/findingid" class="fm" style="color: rgb(9,187,246);">ID 찾기</a>
+        <div class="wall">|</div>
+        <a href="/findingpw" class="fm">PW 찾기</a>
+    </div>
+
+    <div class="inputmenu" style="visibility: visible;">
+        <div class="input_area">
+            <input type="text" id="name" name="name" autocomplete="off" required placeholder="이름을 입력하세요">
+            <label for="name">이름</label>
+        </div>
+
+        <div class="input_area" style="margin-top: 40px;">
+            <input type="text" id="email_certify" name="email_certify" autocomplete="off" required placeholder="이메일을 입력하세요.">
+            <label for="email_certify">이메일 인증</label>
+            <p id="button1" onclick="sendmail()">인증번호 전송</p>
+        </div>
+
+        <div class="input_area">
+            <input type="text" id="authnum" name="authnum" autocomplete="off" required placeholder="인증번호를 입력하세요.">
+        </div>
+        
+        <p id="button2" onclick="emailauth()">다음</p>
+    </div>
+    
+    <div class="inputmenu2" style="visibility : hidden;">
+        <table>
+            <colgroup style="width: 400px;">
+                <col style="width: 50%">
+                <col style="width: 50%">
+            </colgroup>
+            <thead>
+                <th>아이디</th>
+                <th>가입일자</th>
+            </thead>
+            <tbody style="text-align: center;">
+                <tr>
+                    <td><%=ID%></td>
+                    <td>2022.12.02</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="buttonArea">
+            <p class="button">로그인</p>
+            <p class="button">비밀번호 재설정</p>
+        </div>
+    </div>
+    <script>
+        const findId = document.querySelector(".inputmenu"),
+              showId = document.querySelector(".inputmenu2");
+    
+        if(ID){
+            findId.style.visibility = 'hidden';
+            showId.style.visibility = 'visible';
+        }        
+    </script>
+    
+
+
+
+</body>
+</html>
+
+    

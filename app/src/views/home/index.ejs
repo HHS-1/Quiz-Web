@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Black+Han+Sans&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/home/home.js" defer></script>
+</head>
+<body>
+    <div class="page1">
+        <div class="header">
+            <div class="menu"><div class="menu_img"></div>
+                <div id="sidebar">
+                  <div id="xicon"></div>
+                  <h1>메뉴창 미완성</h1>
+                </div>
+            </div>
+            <a href="/" class="logo"></a>
+            <% if(owner) {%>
+            <div style=" width: 400px; position: relative; text-align: end;">
+                <span class="userID">
+                    <span><%=ID%></span>
+                    <span class="usermenu2" style="color: black; margin-right: 50px; font-size: 15px; position: absolute; top: 25px; right: 130px;">△</span>
+                    <span style="font-size: 15px; margin-right: 30px;">▼</span>
+                </span>
+                
+                <span class="usermenu usermenu2">
+                    <div style="width: 125px; height: 150px;">
+                        <div style="height: 40px;"><%=ID%>님 </div>
+                        <div class="userimage"><img class="userimg" src="https://ifh.cc/g/6sovzV.png"></div>
+                    </div>
+                    <div style="width: 125px;">
+                        <div style="height: 40px;"><a href="/mypage" >마이페이지</a></div>
+                        <ul class="smallrank" style="list-style: none;">
+                            <li>누적랭킹</li>
+                            <li>시즌랭킹</li>
+                            <li>누적포인트</li>
+                        </ul>
+                    </div>
+                </span>
+
+                <a href="/logout" class="login">로그아웃</a></div>
+            <%}else{%>
+            <div style="line-height: 60px; width: 400px; text-align: end;">
+                <a href="/login" class="login">로그인</a>
+            </div>
+            <%}%>
+        </div>
+        <div class="banner">
+            <div class="banner-img">
+            </div>
+        </div>
+        <a href="#page2" class="scroll">카테고리<br>ⅴ</a>
+    </div>
+    <div id="page2" class="page2">
+        <div class="ary"><div class="theme1">카테고리</div></div>
+        <div>
+            <ul>
+                <li>수학</li>
+                <li>상식</li>
+                <li>두뇌</li>
+            </ul>
+        </div>
+        <a href="#page3" class="scroll2">랭킹<br>ⅴ</a>
+    </div>
+    <div id="page3" class="page3">
+        <div class="ary">
+            <div class="theme2">랭킹</div>
+            <a class="allrank">전체랭킹></a>
+        </div>
+        <table>
+            <colgroup>
+                <col style="width: 156.25px;">
+                <col style="width: 625px">
+                <col style="width: 156.25px;">
+                <col style="width: 156.25px;">
+                <col style="width: 156.25px;">
+            </colgroup>
+            <thead class="rank_bar"> 
+                <tr>
+                    <th>순위</th>
+                    <th>프로필</th>
+                    <th>누적포인트</th>
+                    <th>맞힌 퀴즈 수</th>
+                    <th>낸 퀴즈 수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for(i = 1 ; i <= 10 ; i++){
+                        document.write('<tr><td class="Nom">'+i+'</td></tr>'); 
+                    }
+                </script>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="footer">개인정보 처리방침 외 다수</div>
+</body>
+</html>
