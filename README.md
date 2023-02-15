@@ -1,2 +1,2 @@
 # nodejs study
-node.js 공부하기
+퀴즈커뮤니티 사이트 만들기
